@@ -17,13 +17,9 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
       <h1>My Weather App for ComIT</h1>
       <Form getWeather={fetchWeatherData}/>
       { console.log(weather) }
-=======
-      Hey  asdfdsfafs
->>>>>>> e915cf6e211a90bc9bba3d7349a87c6d0a91b9b6
     </div>
   );
 }
