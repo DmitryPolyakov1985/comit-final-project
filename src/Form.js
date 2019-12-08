@@ -1,9 +1,8 @@
 import React from 'react'
-import { directive } from '@babel/types';
 
 function Form(props) {
     return (
-        <form onClick={props.getWeather}>
+        <form onSubmit={props.getWeather}>
             <input 
                 type="text"
                 name="city"
