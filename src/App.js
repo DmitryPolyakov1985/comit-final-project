@@ -6,24 +6,20 @@ const apiKey = '4fad5043f986c8cf84c29a4a3e7c3f49';
 
 function App() {
   const [weather, setWeather] = useState([]);
-  // const [city, setCity] = useState('');
-  // const [country, setCountry] = useState('');
 
   const fetchCurrentWeatherData = async(e) => {
     e.preventDefault();
-    // setCity(e.currentTarget.elements.city.value)
-    // setCountry(e.currentTarget.elements.country.value)
+    
     let city = e.currentTarget.elements.city.value;
     let country = e.currentTarget.elements.country.value;
   
     try {
       if(city !== '' && country !== '') {
-        // setCity(e.currentTarget.elements.city.value = '');
         const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=${apiKey}`);
 
         if(response.ok) {
           const data = await response.json();
-          
+         
           setWeather({
             data: data,
             city: data.name,
@@ -35,6 +31,8 @@ function App() {
             humidity: data.main.humidity,
             error: ''
           });
+
+          
         } else {
           throw Error("OOOpppps");
         }
