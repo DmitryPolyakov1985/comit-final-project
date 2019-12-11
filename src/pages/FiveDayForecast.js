@@ -14,7 +14,6 @@ function FiveDayForecast() {
             }); 
         }
         fetchData();
-           
     }, [])
 
     return (
