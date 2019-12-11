@@ -78,8 +78,7 @@ function App() {
   return (
     <div className="App">
       <h1>My Weather App for ComIT</h1>
-      <p>City: {city}</p>
-      <p>Country: {country}</p>
+      
       <Form 
         getCurrentWeather={fetchCurrentWeatherData}
         handleCityInput={handleCityInput}
