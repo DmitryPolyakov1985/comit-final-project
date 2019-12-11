@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom' 
 import './App.css';
 import Form from './Form';
 import Weather from './Weather';
+import FiveDayForecast from './pages/FiveDayForecast';
 const apiKey = '4fad5043f986c8cf84c29a4a3e7c3f49';
 
 function App() {
@@ -71,7 +73,21 @@ function App() {
         humidity={weather.humidity}
         error={weather.error}
       />
+
+      <Router>
+        <div>
+          <Link to='/pages/'>Hey</Link>
+        </div>
+        <Switch>
+          <Route path='/pages/'>
+            <FiveDayForecast />
+          </Route>
+          
+          
+        </Switch>
+      </Router>
     </div>
+    
   );
 }
 
