@@ -25,11 +25,7 @@ function App() {
               </li>
             </ul>
           </nav>
-
-
-
-          
-          
+     
         </div>
         <Switch>
           <Route path='/pages/currentweather' >
@@ -42,6 +38,7 @@ function App() {
             <Home />
           </Route>
           
+
           
           
         </Switch>
