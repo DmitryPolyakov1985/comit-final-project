@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom' 
 
 import './App.css';
@@ -37,10 +37,6 @@ function App() {
           <Route path='/' exact={true}>
             <Home />
           </Route>
-          
-
-          
-          
         </Switch>
       </Router>
     </div>
