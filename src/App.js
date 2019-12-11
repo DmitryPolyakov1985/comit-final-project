@@ -110,6 +110,9 @@ function App() {
           <Route path='/pages/'>
             <FiveDayForecast />
           </Route>
+          <Route path='/pages/'>
+            <FiveDayForecast />
+          </Route>
           
           
         </Switch>
