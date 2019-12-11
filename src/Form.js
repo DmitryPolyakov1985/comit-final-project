@@ -1,15 +1,20 @@
 import React from 'react'
 
 function Form(props) {
+    
     return (
         <form onSubmit={props.getCurrentWeather}>
-            <input 
+            <input
+                onChange={props.handleCityInput}
+                value={props.city}
                 id='city' 
                 type="text"
                 name="city"
                 placeholder="City"
             />
-            <input 
+            <input
+                onChange={props.handleCountryInput}
+                value={props.country}
                 id='country'
                 type="text"
                 name="country"

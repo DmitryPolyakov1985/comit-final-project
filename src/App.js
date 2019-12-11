@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom' 
+
+
 import './App.css';
 import Form from './Form';
 import Weather from './Weather';
@@ -7,25 +9,21 @@ import FiveDayForecast from './pages/FiveDayForecast';
 const apiKey = '4fad5043f986c8cf84c29a4a3e7c3f49';
 
 function App() {
-  const [weather, setWeather] = useState([]);
-  // const [city, setCity] = useState('');
-  // const [country, setCountry] = useState('');
+  let [weather, setWeather] = useState([]);
+  let [city, setCity] = useState('');
+  let [country, setCountry] = useState('');
 
   const fetchCurrentWeatherData = async(e) => {
     e.preventDefault();
-    // setCity(e.currentTarget.elements.city.value)
-    // setCountry(e.currentTarget.elements.country.value)
-    let city = e.currentTarget.elements.city.value;
-    let country = e.currentTarget.elements.country.value;
-  
+    
     try {
       if(city !== '' && country !== '') {
-        // setCity(e.currentTarget.elements.city.value = '');
         const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=${apiKey}`);
 
         if(response.ok) {
           const data = await response.json();
-          
+          console.log(data.name)
+        
           setWeather({
             data: data,
             city: data.name,
@@ -37,6 +35,10 @@ function App() {
             humidity: data.main.humidity,
             error: ''
           });
+          
+          setCity(city = '');
+          setCountry(country = '');
+
         } else {
           throw Error("OOOpppps");
         }
@@ -55,15 +57,41 @@ function App() {
       }
     } catch(err) {
       console.warn(err);
+      setWeather({
+        data: '',
+        city: '',
+        country: '',
+        temperature: '',
+        description: '',
+        clouds: '',
+        wind: '',
+        humidity: '',
+        error: 'Looks like city or country does\'t exist... '
+      });
     }	
+  }
+
+  function handleCityInput(e) {
+    setCity(e.currentTarget.value);
+  }
+
+  function handleCountryInput(e) {
+    setCountry(e.currentTarget.value);
   }
 
   return (
     <div className="App">
       <h1>My Weather App for ComIT</h1>
-      <Form getCurrentWeather={fetchCurrentWeatherData}/>
       
-      <Weather 
+      <Form 
+        getCurrentWeather={fetchCurrentWeatherData}
+        handleCityInput={handleCityInput}
+        handleCountryInput={handleCountryInput}
+        city={city}
+        country={country}
+      />
+      
+      <Weather
         city={weather.city}
         country={weather.country}
         temperature={weather.temperature}
