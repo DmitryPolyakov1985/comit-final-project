@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 
 import Form from './../Form';
 import Weather from './../Weather';
+import './CurrentWeather.css'
 const apiKey = '4fad5043f986c8cf84c29a4a3e7c3f49';
 
 function CurrentWeather() {
     let [weather, setWeather] = useState([]);
     let [city, setCity] = useState('');
     let [country, setCountry] = useState('');
-    let [icon, setIcon] = useState('');
 
     const fetchCurrentWeatherData = async(e) => {
         e.preventDefault();
@@ -82,7 +82,7 @@ function CurrentWeather() {
     }
 
     return (
-        <div>
+        <div className='currentWeather'>
             <h1>Get Current Weather</h1>
 
             <Form 
@@ -93,7 +93,7 @@ function CurrentWeather() {
                 country={country}
             />
             
-            {weather.icon && <p>{<img src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} />}</p>}
+            {weather.icon && <p>{<img className='icon' src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} />}</p>}
             
             <Weather
                 city={weather.city}

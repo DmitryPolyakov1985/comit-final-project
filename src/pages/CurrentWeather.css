@@ -1,0 +1,12 @@
+.currentWeather {
+    background-color: rgb(211, 211, 134);
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    width: 150px;
+    height: 150px;
+    margin: 0;
+    padding: 0
+}

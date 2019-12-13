@@ -18,10 +18,10 @@ function App() {
                 <Link to='/'>Home</Link>
               </li>
               <li>
-                <Link to='/pages/currentweather'>Current</Link>
+                <Link to='/pages/currentweather'>Current Weather</Link>
               </li>
               <li>
-                <Link to='/pages/fivedayforecast'>Five Day</Link>
+                <Link to='/pages/fivedayforecast'>5-Day Forecast</Link>
               </li>
             </ul>
           </nav>
