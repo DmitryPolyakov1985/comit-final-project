@@ -36,7 +36,7 @@ function FiveDayForecast() {
             />
             <p>City: {city}</p>
             <p>Country: {country}</p>
-            
+
             <h1>5-Day Forecast in {forecast.city}, {forecast.country}</h1>
             
         </div>
