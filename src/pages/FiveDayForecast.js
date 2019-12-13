@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react'
+
 import Form from './../Form'
 const apiKey = '4fad5043f986c8cf84c29a4a3e7c3f49';
 
@@ -30,6 +32,13 @@ function FiveDayForecast() {
 
     return (
         <div>
+            <Form
+                handleCityInput={handleCityInput}
+                handleCountryInput={handleCountryInput}
+            />
+            <p>City: {city}</p>
+            <p>Country: {country}</p>
+
             <h1>5-Day Forecast in {forecast.city}, {forecast.country}</h1>
             
         </div>

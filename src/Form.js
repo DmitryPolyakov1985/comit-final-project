@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './Form.css'
 
 function Form(props) {
     
     return (
-        <form onSubmit={props.getCurrentWeather}>
+        <form className='form' onSubmit={props.getCurrentWeather}>
             <input
                 onChange={props.handleCityInput}
                 value={props.city}
