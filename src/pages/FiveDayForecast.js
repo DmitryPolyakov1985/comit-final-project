@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
-=======
+
 import React, { useState, useEffect } from 'react'
->>>>>>> bac101a84c6c8dd84e49d2ad66a4dab2ff7f74c6
+
 import Form from './../Form'
 const apiKey = '4fad5043f986c8cf84c29a4a3e7c3f49';
 
