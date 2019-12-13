@@ -4,6 +4,7 @@ import './Weather.css';
 function Weather( props ) {
     return (
         <div>
+            {props.date && <p>Date: {props.date}</p>}
             {props.city && <p>City: {props.city}</p>}
             {props.country && <p>Country: {props.country}</p>}
             {props.temperature && <p>Temperature: {props.temperature}<sup>o</sup>C</p>}

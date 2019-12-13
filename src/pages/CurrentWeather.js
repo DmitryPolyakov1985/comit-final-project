@@ -23,6 +23,7 @@ function CurrentWeather() {
             
             setWeather({
                 data: data,
+                date: data.dt,
                 city: data.name,
                 country: data.sys.country,
                 temperature: data.main.temp.toFixed(1),
@@ -97,6 +98,7 @@ function CurrentWeather() {
             {weather.icon && <p>{<img className='icon' src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} />}</p>}
             
             <Weather
+                date={weather.date}
                 city={weather.city}
                 country={weather.country}
                 temperature={weather.temperature}

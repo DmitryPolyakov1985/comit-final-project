@@ -11,7 +11,7 @@ function FiveDayForecast() {
 
     useEffect(function() {
         async function fetchData() {
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=Saskatoon,ca&mode=json&units=metric&APPID=${apiKey}`)
+            const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=Saskatoon,ca&mode=json&units=imperial&APPID=${apiKey}`)
             const jsonData = await response.json()
             console.log(jsonData)
             setForecast({
