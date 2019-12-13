@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import Form from './../Form'
 const apiKey = '4fad5043f986c8cf84c29a4a3e7c3f49';
 
 function FiveDayForecast() {
     const [forecast, setForecast] = useState('');
+    let [city, setCity] = useState('');
+    let [country, setCountry] = useState('');
 
     useEffect(function() {
         async function fetchData() {
@@ -16,6 +19,14 @@ function FiveDayForecast() {
         }
         fetchData();
     }, [])
+
+    function handleCityInput(e) {
+        setCity(e.currentTarget.value);
+    }
+
+    function handleCountryInput(e) {
+        setCountry(e.currentTarget.value);
+    }
 
     return (
         <div>

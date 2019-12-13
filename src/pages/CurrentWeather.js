@@ -19,7 +19,7 @@ function CurrentWeather() {
 
             if(response.ok) {
             const data = await response.json();
-            console.log(data.name)
+            console.log(data)
             
             setWeather({
                 data: data,
@@ -31,6 +31,7 @@ function CurrentWeather() {
                 clouds: data.clouds.all,
                 wind: data.wind.speed,
                 humidity: data.main.humidity,
+                
                 error: ''
             });
 

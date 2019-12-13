@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom' 
 
 import './App.css';
@@ -14,33 +14,29 @@ function App() {
         <div>
           <nav>
             <ul>
-            <li>
+              <li>
                 <Link to='/'>Home</Link>
               </li>
               <li>
-                <Link to='/pages/currentweather'>Current</Link>
+                <Link to='/pages/currentweather'>Current Weather</Link>
               </li>
               <li>
-                <Link to='/pages/fivedayforecast'>Five Day</Link>
+                <Link to='/pages/fivedayforecast'>5-Day Forecast</Link>
               </li>
             </ul>
           </nav>
      
         </div>
         <Switch>
-          <Route path='/pages/currentweather' >
-            <CurrentWeather />
-          </Route>
           <Route path='/pages/fivedayforecast'>
             <FiveDayForecast />
+          </Route>
+          <Route path='/pages/currentweather' >
+            <CurrentWeather />
           </Route>
           <Route path='/' exact={true}>
             <Home />
           </Route>
-          
-
-          
-          
         </Switch>
       </Router>
     </div>
