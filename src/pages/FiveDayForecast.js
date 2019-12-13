@@ -30,15 +30,8 @@ function FiveDayForecast() {
 
     return (
         <div>
-            <h1>Get 5-day Forecast</h1>
-            <Form
-                handleCityInput={handleCityInput}
-                handleCountryInput={handleCountryInput}
-            />
-            <p>City is: {city}</p>
-            <p>Country is: {country}</p>
+            <h1>5-Day Forecast in {forecast.city}, {forecast.country}</h1>
             
-            <p>Weather in {forecast.city}, {forecast.country}</p>
         </div>
     );
 }

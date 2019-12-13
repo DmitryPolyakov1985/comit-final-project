@@ -8,6 +8,7 @@ function CurrentWeather() {
     let [weather, setWeather] = useState([]);
     let [city, setCity] = useState('');
     let [country, setCountry] = useState('');
+    let [icon, setIcon] = useState('');
 
     const fetchCurrentWeatherData = async(e) => {
         e.preventDefault();
@@ -26,12 +27,15 @@ function CurrentWeather() {
                 country: data.sys.country,
                 temperature: data.main.temp.toFixed(1),
                 description: data.weather[0].description,
+                icon: data.weather[0].icon, 
                 clouds: data.clouds.all,
                 wind: data.wind.speed,
                 humidity: data.main.humidity,
                 
                 error: ''
             });
+
+            // setIcon(`http://openweathermap.org/img/wn/10d@2x.png`);
             
             setCity(city = '');
             setCountry(country = '');
@@ -46,6 +50,7 @@ function CurrentWeather() {
             country: '',
             temperature: '',
             description: '',
+            icon: '',
             clouds: '',
             wind: '',
             humidity: '',
@@ -60,6 +65,7 @@ function CurrentWeather() {
             country: '',
             temperature: '',
             description: '',
+            icon: '',
             clouds: '',
             wind: '',
             humidity: '',
@@ -79,7 +85,7 @@ function CurrentWeather() {
     return (
         <div>
             <h1>Get Current Weather</h1>
-            
+
             <Form 
                 getCurrentWeather={fetchCurrentWeatherData}
                 handleCityInput={handleCityInput}
@@ -87,6 +93,8 @@ function CurrentWeather() {
                 city={city}
                 country={country}
             />
+            
+            {weather.icon && <p>{<img src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} />}</p>}
             
             <Weather
                 city={weather.city}
