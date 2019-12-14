@@ -2,7 +2,6 @@ import React from 'react';
 import './Form.css'
 
 function Form(props) {
-    
     return (
         <form className='form' onSubmit={props.getCurrentWeather}>
             <input
@@ -21,7 +20,7 @@ function Form(props) {
                 name="country"
                 placeholder="Country"
             />
-            <button>Get Weather</button>
+            <button className='getWeatherBtn'>Get Weather</button>
         </form>
     );
 }

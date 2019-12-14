@@ -3,3 +3,33 @@
     padding-bottom: 30px;
     margin: 0;
 }
+input {
+    width: 90%;
+    height: 35px;
+    border: none;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.548);
+}
+input:focus,
+input:active {
+    background-color: #fff;
+}
+.getWeatherBtn {
+    font-size: 18px;
+    border: 0.5px solid #d2d2d2;
+    background: rgb(216, 146, 15);
+    outline: 0;
+    padding: 15px 33px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
+    transition: 0.3s box-shadow;
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+}
+.getWeatherBtn:hover {
+    box-shadow: 3px 3px 3px rgb(180, 180, 99);
+}

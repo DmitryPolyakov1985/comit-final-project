@@ -1,16 +1,14 @@
 html {
   margin: 0;
   padding: 0;
+  background-color: rgb(236, 236, 114);
 }
-
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -21,7 +19,75 @@ html {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #09d3ac;
+}
+.navbar {
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgb(216, 146, 15);
+  max-width: 100%;
+}
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.navbar ul li {
+  list-style: none;
+  padding: 15px 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.link:hover {
+  color: rgb(185, 185, 185);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 800px) {
+  .link {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .navbar ul li {
+    padding: 5px 0;
+    max-width: 100%;
+  }
+  .link {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar ul {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .navbar ul li {
+    list-style: none;
+    padding: 5px 0;
+    max-width: 100%;
+  }
+  .link {
+    font-size: 17px;
+    padding: 10px;
+  }
 }
