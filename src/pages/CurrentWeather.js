@@ -96,15 +96,19 @@ function CurrentWeather() {
                         monthOfTheYear = 'Dec';
                         break;         
                 }
-                const fullDate = `${hours} : ${minutes}, ${dayOfTheWeek}, ${date} ${monthOfTheYear}, ${year}`
+                const fullDate = `${dayOfTheWeek}, ${monthOfTheYear} ${date}, ${year}`
                 return fullDate
             }
             
             setWeather({
                 data: data,
+                date: getDate(),
                 city: data.name,
                 country: data.sys.country,
                 temperature: data.main.temp.toFixed(1),
+                feelsLikeTemp: data.main.feels_like.toFixed(1),
+                minTemp: data.main.temp_min.toFixed(1),
+                maxTemp: data.main.temp_max.toFixed(1),
                 description: data.weather[0].description,
                 icon: data.weather[0].icon, 
                 clouds: data.clouds.all,
@@ -113,7 +117,7 @@ function CurrentWeather() {
                 error: ''
             });
 
-            setDate(getDate);
+            // setDate(getDate);
             
             setCity(city = '');
             setCountry(country = '');
@@ -127,6 +131,9 @@ function CurrentWeather() {
             city: '',
             country: '',
             temperature: '',
+            feelsLikeTemp: '',
+            minTemp: '',
+            maxTemp: '',
             description: '',
             icon: '',
             clouds: '',
@@ -142,6 +149,9 @@ function CurrentWeather() {
             city: '',
             country: '',
             temperature: '',
+            feelsLikeTemp: '',
+            minTemp: '',
+            maxTemp: '',
             description: '',
             icon: '',
             clouds: '',
@@ -159,11 +169,6 @@ function CurrentWeather() {
     function handleCountryInput(e) {
         setCountry(e.currentTarget.value);
     }
-
-    // function handleDate() {
-    //     const getDate = date * 1000;
-    //     return getDate;
-    // }
     
     return (
         <div className='currentWeather'>
@@ -177,14 +182,15 @@ function CurrentWeather() {
                 country={country}
             />
             
-            {weather.icon && <p>{<img className='icon' src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} />}</p>}
-            <p>{date}</p>
-            
             <Weather
-                // date={handleDate}
+                icon={weather.icon}
+                date={weather.date}
                 city={weather.city}
                 country={weather.country}
                 temperature={weather.temperature}
+                feelsLikeTemp={weather.feelsLikeTemp}
+                minTemp={weather.minTemp}
+                maxTemp={weather.maxTemp}
                 description={weather.description}
                 clouds={weather.clouds}
                 wind={weather.wind}
