@@ -10,14 +10,14 @@ function Weather( props ) {
                 {props.minTemp && <p>Min temperature: {props.minTemp}<sup>o</sup>C</p>}
                 {props.maxTemp && <p>Max temperature: {props.maxTemp}<sup>o</sup>C</p>}
             </div>
-            
+
             {props.city && <p>City: {props.city}</p>}
             {props.country && <p>Country: {props.country}</p>}
             {props.temperature && <p>Temperature: {props.temperature}<sup>o</sup>C</p>}
             {props.feelsLikeTemp && <p>Feels like: {props.feelsLikeTemp}<sup>o</sup>C</p>}
             
             {props.description && <p>Description: {props.description}</p>}
-    {props.wind && <p>Wind: {props.wind} m/s</p>}
+            {props.wind && <p>Wind: {props.wind} m/s</p>}
             {props.clouds && <p>Clouds: {props.clouds}%</p>}
             {props.humidity && <p>Humidity: {props.humidity}%</p>}
             {props.icon && <p>Icon: {props.icon}</p>}
