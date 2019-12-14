@@ -1,6 +1,7 @@
 html {
   margin: 0;
   padding: 0;
+  background-color: rgb(211, 211, 134);
 }
 
 .App {
@@ -24,4 +25,9 @@ html {
 
 .App-link {
   color: #09d3ac;
+}
+.navbar {
+  margin: 0;
+  padding: 10px;
+  background-color: #fff;
 }

@@ -10,9 +10,9 @@ import CurrentWeather from './pages/CurrentWeather'
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router >
         <div>
-          <nav>
+          <nav className='navbar'>
             <ul>
               <li>
                 <Link to='/'>Home</Link>

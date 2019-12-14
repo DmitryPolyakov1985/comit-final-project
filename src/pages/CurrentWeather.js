@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Form from './../Form';
 import Weather from './../Weather';
@@ -22,6 +22,84 @@ function CurrentWeather() {
             const data = await response.json();
             console.log(data)
             
+            function getDate() {
+                const getData = new Date(data.dt * 1000)
+                console.log(getData)
+                const date = getData.getDate()
+                const hours = getData.getHours()
+                const minutes = getData.getMinutes()
+                const month = getData.getMonth()
+                const year = getData.getFullYear()
+            
+                const day = getData.getDay()
+                let dayOfTheWeek = ''
+                switch(day) {
+                    case 0:
+                        dayOfTheWeek = 'Sun';
+                        break;
+                    case 1:
+                        dayOfTheWeek = 'Mon';
+                        break;
+                    case 2:
+                        dayOfTheWeek = 'Tue';
+                        break;
+                    case 3:
+                        dayOfTheWeek = 'Wed';
+                        break;
+                    case 4:
+                        dayOfTheWeek = 'Thur';
+                        break;
+                    case 5:
+                        dayOfTheWeek = 'Fri';
+                        break;
+                    case 6:
+                        dayOfTheWeek = 'Sat';
+                        break;             
+                }
+            
+                let monthOfTheYear = ''
+                switch(month) {
+                    case 1:
+                        monthOfTheYear = 'Jan';
+                        break;
+                    case 2:
+                        monthOfTheYear = 'Feb';
+                        break;
+                    case 3:
+                        monthOfTheYear = 'Mar';
+                        break;
+                    case 4:
+                        monthOfTheYear = 'Apr';
+                        break;
+                    case 5:
+                        monthOfTheYear = 'May';
+                        break;
+                    case 6:
+                        monthOfTheYear = 'Jun';
+                        break;
+                    case 7:
+                        monthOfTheYear = 'Jul';
+                        break;
+                    case 8:
+                        monthOfTheYear = 'Aug';
+                        break;
+                    case 9:
+                        monthOfTheYear = 'Sep';
+                        break;
+                    case 10:
+                        monthOfTheYear = 'Oct';
+                        break;
+                    case 11:
+                        monthOfTheYear = 'Nov';
+                        break;
+                    case 12:
+                        monthOfTheYear = 'Dec';
+                        break;         
+                }
+                const fullDate = `${hours} : ${minutes}, ${dayOfTheWeek}, ${date} ${monthOfTheYear}, ${year}`
+                return fullDate
+            }
+            
             setWeather({
                 data: data,
                 city: data.name,
@@ -35,9 +113,7 @@ function CurrentWeather() {
                 error: ''
             });
 
-            setDate({
-                date: Date(data.dt)
-            });
+            setDate(getDate);
             
             setCity(city = '');
             setCountry(country = '');
@@ -84,6 +160,11 @@ function CurrentWeather() {
         setCountry(e.currentTarget.value);
     }
 
+    // function handleDate() {
+    //     const getDate = date * 1000;
+    //     return getDate;
+    // }
+    
     return (
         <div className='currentWeather'>
             <h1>Get Current Weather</h1>
@@ -97,10 +178,10 @@ function CurrentWeather() {
             />
             
             {weather.icon && <p>{<img className='icon' src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} />}</p>}
-            {/* <p>Weather date: {date}</p> */}
+            <p>{date}</p>
             
             <Weather
-                date={date.date}
+                // date={handleDate}
                 city={weather.city}
                 country={weather.country}
                 temperature={weather.temperature}

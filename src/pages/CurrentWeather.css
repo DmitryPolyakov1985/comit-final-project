@@ -1,5 +1,5 @@
 .currentWeather {
-    background-color: rgb(211, 211, 134);
+    background-color: rgb(240, 240, 88);
     margin: 0;
     padding: 0;
 }
@@ -9,4 +9,8 @@
     height: 150px;
     margin: 0;
     padding: 0
+}
+h1 {
+    margin: 0;
+    padding: 0;
 }
