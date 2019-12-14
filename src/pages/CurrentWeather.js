@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import Form from './../Form';
 import Weather from './../Weather';
@@ -9,7 +9,7 @@ function CurrentWeather() {
     let [weather, setWeather] = useState([]);
     let [city, setCity] = useState('');
     let [country, setCountry] = useState('');
-    let [date, setDate] = useState('');
+    // let [date, setDate] = useState('');
 
     const fetchCurrentWeatherData = async(e) => {
         e.preventDefault();
@@ -26,8 +26,8 @@ function CurrentWeather() {
                 const getData = new Date(data.dt * 1000)
                 console.log(getData)
                 const date = getData.getDate()
-                const hours = getData.getHours()
-                const minutes = getData.getMinutes()
+                // const hours = getData.getHours()
+                // const minutes = getData.getMinutes()
                 const month = getData.getMonth()
                 const year = getData.getFullYear()
             
