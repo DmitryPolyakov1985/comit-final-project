@@ -7,10 +7,12 @@ input {
     width: 90%;
     height: 35px;
     border: none;
-    margin-bottom: 5px;
     border-radius: 6px;
     outline: none;
     background-color: rgba(255, 255, 255, 0.548);
+    display: block;
+    margin: 5px auto;
+    max-width: 450px;
 }
 input:focus,
 input:active {
@@ -22,6 +24,8 @@ input:active {
     background: rgb(216, 146, 15);
     outline: 0;
     padding: 15px 33px;
+    display: block;
+    margin: 0 auto;
     margin-top: 20px;
     cursor: pointer;
     text-transform: uppercase;
@@ -29,7 +33,17 @@ input:active {
     transition: 0.3s box-shadow;
     color: #fff;
     font-family: "Segoe UI", sans-serif;
+    
 }
 .getWeatherBtn:hover {
     box-shadow: 3px 3px 3px rgb(180, 180, 99);
+}
+
+/* MEDIA QUERIES */
+@media (min-width:600px) {
+    input {
+        width: 65%;
+        height: 40px;
+        margin-bottom: 8px;
+    }
 }
