@@ -9,6 +9,7 @@ function CurrentWeather() {
     let [weather, setWeather] = useState([]);
     let [city, setCity] = useState('');
     let [country, setCountry] = useState('');
+    let [date, setDate] = useState('');
 
     const fetchCurrentWeatherData = async(e) => {
         e.preventDefault();
@@ -23,7 +24,6 @@ function CurrentWeather() {
             
             setWeather({
                 data: data,
-                date: data.dt,
                 city: data.name,
                 country: data.sys.country,
                 temperature: data.main.temp.toFixed(1),
@@ -32,11 +32,12 @@ function CurrentWeather() {
                 clouds: data.clouds.all,
                 wind: data.wind.speed,
                 humidity: data.main.humidity,
-                
                 error: ''
             });
 
-            // setIcon(`http://openweathermap.org/img/wn/10d@2x.png`);
+            setDate({
+                date: Date(data.dt)
+            });
             
             setCity(city = '');
             setCountry(country = '');
@@ -96,9 +97,10 @@ function CurrentWeather() {
             />
             
             {weather.icon && <p>{<img className='icon' src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`} />}</p>}
+            {/* <p>Weather date: {date}</p> */}
             
             <Weather
-                date={weather.date}
+                date={date.date}
                 city={weather.city}
                 country={weather.country}
                 temperature={weather.temperature}
