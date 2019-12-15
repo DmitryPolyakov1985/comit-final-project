@@ -6,8 +6,8 @@
     padding-bottom: 25px;
 }
 .icon {
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: auto;
     margin: 0;
     padding: 0
 }
@@ -16,4 +16,13 @@ h1 {
     font-size: 35px;
     margin: 15px 0;
     padding: 0;
+    text-align: center;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+    .icon {
+        width: 140px;
+        height: auto;
+    }
 }
