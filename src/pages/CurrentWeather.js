@@ -116,8 +116,6 @@ function CurrentWeather() {
                 humidity: data.main.humidity,
                 error: ''
             });
-
-            // setDate(getDate);
             
             setCity(city = '');
             setCountry(country = '');

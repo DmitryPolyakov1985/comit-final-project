@@ -1,5 +1,6 @@
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import './FiveDayForecast.css'
 
 import Form from './../Form'
 const apiKey = '4fad5043f986c8cf84c29a4a3e7c3f49';
@@ -14,9 +15,12 @@ function FiveDayForecast() {
             const response = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=Saskatoon,ca&mode=json&units=imperial&APPID=${apiKey}`)
             const jsonData = await response.json()
             console.log(jsonData)
+
+            
             setForecast({
                 city: jsonData.city.name,
-                country: jsonData.city.country
+                country: jsonData.city.country,
+                date: jsonData.list[0].dt
             }); 
         }
         fetchData();
@@ -31,7 +35,7 @@ function FiveDayForecast() {
     }
 
     return (
-        <div>
+        <div className='fiveDayForecastContainer'>
             <Form
                 handleCityInput={handleCityInput}
                 handleCountryInput={handleCountryInput}
@@ -40,6 +44,7 @@ function FiveDayForecast() {
             <p>Country: {country}</p>
 
             <h1>5-Day Forecast in {forecast.city}, {forecast.country}</h1>
+            <p>Date: {forecast.date}</p>
             
         </div>
     );
