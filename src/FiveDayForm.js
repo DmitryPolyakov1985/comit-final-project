@@ -1,9 +1,9 @@
 import React from 'react';
-import './Form.css'
+import './FiveDayForm.css'
 
-function Form(props) {
+function FiveDayForm(props) {
     return (
-        <form className='form' onSubmit={props.fetchCurrentWeatherData} >
+        <form className='form' onSubmit={props.fetchFiveDayForecast} >
             <input
                 onChange={props.handleCityInput}
                 value={props.city}
@@ -25,4 +25,4 @@ function Form(props) {
     );
 }
 
-export default Form;
+export default FiveDayForm;

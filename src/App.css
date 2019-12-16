@@ -1,7 +1,7 @@
 html {
   margin: 0;
   padding: 0;
-  background-color: rgb(236, 236, 114);
+  background-color: rgb(167, 221, 236);
 }
 .App-logo {
   height: 40vmin;
@@ -22,7 +22,7 @@ html {
 .navbar {
   margin: 0 auto;
   padding: 10px;
-  background-color: rgb(216, 146, 15);
+  background-image: linear-gradient(to top, #004796, #00a3de);
   width: 100%;
 }
 .navbar ul {
@@ -38,10 +38,10 @@ html {
   justify-content: center;
 }
 .link {
-  font-size: 20px;
+  font-size: 23px;
   text-decoration: none;
   color: #fff;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   padding: 10px 20px;
   transition: 0.3s;
   display: flex;
@@ -55,7 +55,7 @@ html {
 /* MEDIA QUERIES */
 @media (max-width: 800px) {
   .link {
-    font-size: 19px;
+    font-size: 21px;
   }
 }
 

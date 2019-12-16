@@ -9,7 +9,6 @@ function CurrentWeather() {
     let [weather, setWeather] = useState([]);
     let [city, setCity] = useState('');
     let [country, setCountry] = useState('');
-    // let [date, setDate] = useState('');
 
     const fetchCurrentWeatherData = async(e) => {
         e.preventDefault();
@@ -23,81 +22,81 @@ function CurrentWeather() {
             console.log(data)
             
             function getDate() {
-                const getData = new Date(data.dt * 1000)
-                console.log(getData)
-                const date = getData.getDate()
-                // const hours = getData.getHours()
-                // const minutes = getData.getMinutes()
-                const month = getData.getMonth()
-                const year = getData.getFullYear()
-            
-                const day = getData.getDay()
-                let dayOfTheWeek = ''
-                switch(day) {
-                    case 0:
-                        dayOfTheWeek = 'Sun';
-                        break;
-                    case 1:
-                        dayOfTheWeek = 'Mon';
-                        break;
-                    case 2:
-                        dayOfTheWeek = 'Tue';
-                        break;
-                    case 3:
-                        dayOfTheWeek = 'Wed';
-                        break;
-                    case 4:
-                        dayOfTheWeek = 'Thur';
-                        break;
-                    case 5:
-                        dayOfTheWeek = 'Fri';
-                        break;
-                    case 6:
-                        dayOfTheWeek = 'Sat';
-                        break;             
-                }
-            
-                let monthOfTheYear = ''
-                switch(month) {
-                    case 1:
-                        monthOfTheYear = 'Jan';
-                        break;
-                    case 2:
-                        monthOfTheYear = 'Feb';
-                        break;
-                    case 3:
-                        monthOfTheYear = 'Mar';
-                        break;
-                    case 4:
-                        monthOfTheYear = 'Apr';
-                        break;
-                    case 5:
-                        monthOfTheYear = 'May';
-                        break;
-                    case 6:
-                        monthOfTheYear = 'Jun';
-                        break;
-                    case 7:
-                        monthOfTheYear = 'Jul';
-                        break;
-                    case 8:
-                        monthOfTheYear = 'Aug';
-                        break;
-                    case 9:
-                        monthOfTheYear = 'Sep';
-                        break;
-                    case 10:
-                        monthOfTheYear = 'Oct';
-                        break;
-                    case 11:
-                        monthOfTheYear = 'Nov';
-                        break;
-                    case 12:
-                        monthOfTheYear = 'Dec';
-                        break;         
-                }
-                const fullDate = `${dayOfTheWeek}, ${monthOfTheYear} ${date}, ${year}`
-                return fullDate
+            const getData = new Date(data.dt * 1000)
+            console.log(getData)
+            const dayOfTheMonth = getData.getDate()
+            // const hours = getData.getHours()
+            // const minutes = getData.getMinutes()
+            const month = getData.getMonth()
+            const year = getData.getFullYear()
+        
+            const day = getData.getDay()
+            let dayOfTheWeek = ''
+            switch(day) {
+                case 0:
+                    dayOfTheWeek = 'Sun';
+                    break;
+                case 1:
+                    dayOfTheWeek = 'Mon';
+                    break;
+                case 2:
+                    dayOfTheWeek = 'Tue';
+                    break;
+                case 3:
+                    dayOfTheWeek = 'Wed';
+                    break;
+                case 4:
+                    dayOfTheWeek = 'Thur';
+                    break;
+                case 5:
+                    dayOfTheWeek = 'Fri';
+                    break;
+                case 6:
+                    dayOfTheWeek = 'Sat';
+                    break;             
+            }
+        
+            let monthOfTheYear = ''
+            switch(month) {
+                case 1:
+                    monthOfTheYear = 'Jan';
+                    break;
+                case 2:
+                    monthOfTheYear = 'Feb';
+                    break;
+                case 3:
+                    monthOfTheYear = 'Mar';
+                    break;
+                case 4:
+                    monthOfTheYear = 'Apr';
+                    break;
+                case 5:
+                    monthOfTheYear = 'May';
+                    break;
+                case 6:
+                    monthOfTheYear = 'Jun';
+                    break;
+                case 7:
+                    monthOfTheYear = 'Jul';
+                    break;
+                case 8:
+                    monthOfTheYear = 'Aug';
+                    break;
+                case 9:
+                    monthOfTheYear = 'Sep';
+                    break;
+                case 10:
+                    monthOfTheYear = 'Oct';
+                    break;
+                case 11:
+                    monthOfTheYear = 'Nov';
+                    break;
+                case 12:
+                    monthOfTheYear = 'Dec';
+                    break;         
+            }
+            const fullDate = `${dayOfTheWeek}, ${monthOfTheYear} ${dayOfTheMonth}, ${year}`
+            return fullDate
             }
             
             setWeather({
@@ -120,9 +119,9 @@ function CurrentWeather() {
             setCity(city = '');
             setCountry(country = '');
 
-            } else {
-            throw Error("OOOpppps");
-            }
+        } else {
+        throw Error("OOOpppps");
+        }
         } else {
             setWeather({
             data: '',
@@ -170,10 +169,10 @@ function CurrentWeather() {
     
     return (
         <div className='currentWeather'>
-            <h1>Get Current Weather</h1>
+            <h1>Current Weather</h1>
 
             <Form 
-                getCurrentWeather={fetchCurrentWeatherData}
+                fetchCurrentWeatherData={fetchCurrentWeatherData}
                 handleCityInput={handleCityInput}
                 handleCountryInput={handleCountryInput}
                 city={city}
