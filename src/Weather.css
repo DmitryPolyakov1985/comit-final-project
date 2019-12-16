@@ -13,7 +13,7 @@ p {
     font-size: 17px;
     height: auto;
     margin: 0;
-    margin-bottom: 30px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +46,9 @@ p {
 @media (max-width: 600px) {
     .weatherContainer {
         flex-direction: column;
+    }
+    .weatherBox {
+        margin-bottom: 30px;
     }
     .weatherData {
         font-size: 16px;
