@@ -1,3 +1,6 @@
 .fiveDayForecastContainer {
+    margin: 0;
+    padding: 10px;
+    padding-bottom: 25px;
     text-align: center;
 }
