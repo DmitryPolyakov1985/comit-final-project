@@ -22,15 +22,12 @@ function FiveDayForecast() {
             .then(res => res.json())
             .then(data => {
                 const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
-                console.log(data)
+                // console.log(data)
                 setCityName(data.city.name);
                 setFullData(data);
                 setDailyData(dailyData);
-                
-                
-                // console.log(dailyData)
             })
-            console.log(fullData)
+            // console.log(fullData)
             setCity(city = '');
             setCountry(country = '');
     
