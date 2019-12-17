@@ -25,6 +25,7 @@ p {
     width: 100%;
     justify-content: space-evenly;
     font-size: 26px;
+    font-weight: 700;
 }
 .weatherData {
     font-size: 17.5px;
