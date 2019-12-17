@@ -31,6 +31,8 @@ function FiveDayForecast() {
                 // console.log(dailyData)
             })
             console.log(fullData)
+            setCity(city = '');
+            setCountry(country = '');
     
     } 
 
@@ -59,7 +61,7 @@ function FiveDayForecast() {
                 country={country}
             />
             
-            <div>
+            <div className='cardsContainer'>
                 {formatDayCards()}
             </div>
         </div>

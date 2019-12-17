@@ -38,7 +38,7 @@ html {
   justify-content: center;
 }
 .link {
-  font-size: 23px;
+  font-size: 21px;
   text-decoration: none;
   color: #fff;
   /* text-transform: uppercase; */
@@ -55,7 +55,7 @@ html {
 /* MEDIA QUERIES */
 @media (max-width: 800px) {
   .link {
-    font-size: 21px;
+    font-size: 20.5px;
   }
 }
 
