@@ -2,6 +2,8 @@
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: center;
+    padding: 10px 20px;
+    margin: 0 auto;
 }
 
 .weatherCard {

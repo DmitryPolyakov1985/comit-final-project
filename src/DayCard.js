@@ -4,7 +4,7 @@ import './DayCard.css';
 const moment = require('moment');
 
 function DayCard(props) {
-    console.log(props)
+    // console.log(props)
     let newDate = new Date();
     const weekday = props.reading.dt * 1000
     newDate.setTime(weekday)
