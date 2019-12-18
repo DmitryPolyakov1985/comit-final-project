@@ -19,89 +19,10 @@ function CurrentWeather() {
 
             if(response.ok) {
             const data = await response.json();
-            console.log(data)
-            
-            function getDate() {
-                const getData = new Date(data.dt * 1000)
-                console.log(getData)
-                const dayOfTheMonth = getData.getDate()
-                // const hours = getData.getHours()
-                // const minutes = getData.getMinutes()
-                const month = getData.getMonth()
-                const year = getData.getFullYear()
-            
-                const day = getData.getDay()
-                let dayOfTheWeek = ''
-                switch(day) {
-                    case 0:
-                        dayOfTheWeek = 'Sun';
-                        break;
-                    case 1:
-                        dayOfTheWeek = 'Mon';
-                        break;
-                    case 2:
-                        dayOfTheWeek = 'Tue';
-                        break;
-                    case 3:
-                        dayOfTheWeek = 'Wed';
-                        break;
-                    case 4:
-                        dayOfTheWeek = 'Thur';
-                        break;
-                    case 5:
-                        dayOfTheWeek = 'Fri';
-                        break;
-                    case 6:
-                        dayOfTheWeek = 'Sat';
-                        break;             
-                }
-            
-                let monthOfTheYear = ''
-                switch(month) {
-                    case 1:
-                        monthOfTheYear = 'Jan';
-                        break;
-                    case 2:
-                        monthOfTheYear = 'Feb';
-                        break;
-                    case 3:
-                        monthOfTheYear = 'Mar';
-                        break;
-                    case 4:
-                        monthOfTheYear = 'Apr';
-                        break;
-                    case 5:
-                        monthOfTheYear = 'May';
-                        break;
-                    case 6:
-                        monthOfTheYear = 'Jun';
-                        break;
-                    case 7:
-                        monthOfTheYear = 'Jul';
-                        break;
-                    case 8:
-                        monthOfTheYear = 'Aug';
-                        break;
-                    case 9:
-                        monthOfTheYear = 'Sep';
-                        break;
-                    case 10:
-                        monthOfTheYear = 'Oct';
-                        break;
-                    case 11:
-                        monthOfTheYear = 'Nov';
-                        break;
-                    case 12:
-                        monthOfTheYear = 'Dec';
-                        break;         
-                }
-                const fullDate = `${dayOfTheWeek}, ${monthOfTheYear} ${dayOfTheMonth}, ${year}`
-                return fullDate
-            }
             
             setWeather({
                 data: data,
-                date: getDate(),
+                date: data.dt,
                 city: data.name,
                 country: data.sys.country,
                 temperature: data.main.temp.toFixed(1),
@@ -115,13 +36,12 @@ function CurrentWeather() {
                 humidity: data.main.humidity,
                 error: ''
             });
-            
             setCity(city = '');
             setCountry(country = '');
 
-        } else {
-        throw Error("OOOpppps");
-        }
+            } else {
+            throw Error("OOOpppps");
+            }
         } else {
             setWeather({
             data: '',
@@ -140,22 +60,22 @@ function CurrentWeather() {
             });
         }
         } catch(err) {
-        console.warn(err);
-        setWeather({
-            data: '',
-            city: '',
-            country: '',
-            temperature: '',
-            feelsLikeTemp: '',
-            minTemp: '',
-            maxTemp: '',
-            description: '',
-            icon: '',
-            clouds: '',
-            wind: '',
-            humidity: '',
-            error: 'Looks like city or country does\'t exist... '
-        });
+            console.warn(err);
+            setWeather({
+                data: '',
+                city: '',
+                country: '',
+                temperature: '',
+                feelsLikeTemp: '',
+                minTemp: '',
+                maxTemp: '',
+                description: '',
+                icon: '',
+                clouds: '',
+                wind: '',
+                humidity: '',
+                error: 'Looks like city or country does\'t exist... '
+            });
         }	
     }
 

@@ -13,6 +13,7 @@ input {
     display: block;
     margin: 5px auto;
     max-width: 450px;
+    padding: 4px
 }
 input:focus,
 input:active {
