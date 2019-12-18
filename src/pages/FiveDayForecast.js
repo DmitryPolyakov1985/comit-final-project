@@ -3,7 +3,6 @@ import './FiveDayForecast.css'
 
 import FiveDayForm from './../FiveDayForm';
 import DayCard from './../DayCard';
-import FiveDayWeather from './../FiveDayWeather'
 const apiKey = '4fad5043f986c8cf84c29a4a3e7c3f49';
 
 
@@ -18,19 +17,19 @@ function FiveDayForecast() {
     const fetchFiveDayForecast = async(e) => {
         e.preventDefault();
 
-        const res = await fetch(weatherURL)
+        if(city !== '' && country !== '') {
+            const res = await fetch(weatherURL)
             .then(res => res.json())
             .then(data => {
-                const dailyData = data.list.filter(reading => reading.dt_txt.includes("18:00:00"))
-                // console.log(data)
+                const dailyData = data.list.filter(reading => reading.dt_txt.includes("15:00:00"))
                 setCityName(data.city.name);
                 setFullData(data);
+                console.log(data);
                 setDailyData(dailyData);
             })
-            // console.log(fullData)
             setCity(city = '');
             setCountry(country = '');
-    
+        } 
     } 
 
     function handleCityInput(e) {
@@ -43,7 +42,6 @@ function FiveDayForecast() {
 
     function formatDayCards() {
         return dailyData.map((reading, index) => <DayCard cityName={cityName} reading={reading} key={index} />)
-        
     }
 
     return (
@@ -61,6 +59,7 @@ function FiveDayForecast() {
             <div className='cardsContainer'>
                 {formatDayCards()}
             </div>
+            
         </div>
     );
 }

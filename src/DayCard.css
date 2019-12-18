@@ -14,7 +14,7 @@
     /* flex-wrap: wrap; */
     align-items: center;
     width: 200px;
-    height: 300px;
+    height: 340px;
     padding: 5px;
     padding-top: 13px;
     /* border: 1px solid #000; */
@@ -38,7 +38,7 @@
 /* MEDIA QUERIES */
 @media (max-width: 900px) {
     .weatherCard {
-        height: 370px; 
+        height: 350px; 
     }
 }
 @media (max-width: 700px) {
@@ -48,14 +48,14 @@
     }
     .weatherCard {
         width: 300px;
-        height: 310px;
+        height: 320px;
         margin-bottom: 15px;
     }
 }
 @media (max-width: 600px) {
     .weatherCard {
         width: 250px;
-        height: 310px;
+        height: 330px;
     }
 }
 

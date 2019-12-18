@@ -1,11 +1,17 @@
 import React from 'react';
 import './Weather.css';
 
+const moment = require('moment');
+
 function Weather( props ) {
+    const newDate = new Date();
+    const date = props.date * 1000;
+    newDate.setTime(date)
+
     return (
         <div className='weatherContainer'>
             <div className='weatherBox'>
-                {props.date && <p>{props.date}</p>}
+                {props.date && <p>{moment(newDate).format(`MMM D, YYYY`)}</p>}
                 {props.icon && <img className='icon' src={`http://openweathermap.org/img/wn/${props.icon}@2x.png`} alt='Weather Icon'/>}
                 {props.description && <p style={{ fontWeight: 'bolder' }}> {props.description}</p>}
                 <div className="weatherBoxTemperature">
