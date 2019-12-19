@@ -24,7 +24,6 @@ function FiveDayForecast() {
                 const dailyData = data.list.filter(reading => reading.dt_txt.includes("15:00:00"))
                 setCityName(data.city.name);
                 setFullData(data);
-                console.log(data);
                 setDailyData(dailyData);
             })
             setCity(city = '');
