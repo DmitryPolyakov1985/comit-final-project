@@ -28,7 +28,7 @@ function App() {
      
         </div>
         <Switch>
-          <Route path='/pages/fivedayforecast'>
+          <Route path='/pages/fivedayforecast' basename={'/comit-final-project'}>
             <FiveDayForecast />
           </Route>
           <Route path='/pages/currentweather' >
